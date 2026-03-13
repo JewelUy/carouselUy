@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 1-C UY carousel </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            scroll-behavior: smooth;
+        }
+
+    
+        .carousel::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .carousel::-webkit-scrollbar-track {
+            background: #ddd;
+            border-radius: 10px;
+        }
+
+        .carousel::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .carousel::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+
+        .carousel-item {
+            min-width: 100%;
+            height: 400px;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+      
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        
+        .nav-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #555;
+        }
+
+      
+        .dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #bbb;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot:hover {
+            background-color: #888;
+        }
+
+        .dot.active {
+            background-color: #333;
+        }
+
+     
+        @media (max-width: 600px) {
+            .carousel-item {
+                height: 300px;
+            }
+
+            .nav-links a {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CS 1-C UY CAROUSEL </h1>
+
+  
+    <div class="nav-links">
+        <a href="#slide1">Slide 1</a>
+        <a href="#slide2">Slide 2</a>
+        <a href="#slide3">Slide 3</a>
+        <a href="#slide4">Slide 4</a>
+        <a href="#slide5">Slide 5</a>
+    </div>
+
+  
+    <div class="carousel">
+       
+        <div class="carousel-item" id="slide1">
+            <img src="C:\Users\comlab1\Downloads\gundam.jpg" alt="Slide 1">
+        </div>
+
+       
+        <div class="carousel-item" id="slide2">
+            <img src="C:\Users\comlab1\Downloads\kim minji.jpg" alt="Slide 2">
+        </div>
+
+       
+        <div class="carousel-item" id="slide3">
+            <img src="C:\Users\comlab1\Downloads\cat explosiion.webp" alt="Slide 3">
+        </div>
+
+       
+        <div class="carousel-item" id="slide4">
+            <img src="C:\Users\comlab1\Desktop\UY CS-1C\vinland.webp" alt="Slide 4">
+        </div>
+
+        <div class="carousel-item" id="slide5">
+            <img src="C:\Users\comlab1\Desktop\UY CS-1C\cat windows.jpg" alt="Slide 5">
+        </div>
+
+
+
+    </div>
+
+   
+    <div class="dots">
+        <a href="#slide1" class="dot active"></a>
+        <a href="#slide2" class="dot"></a>
+        <a href="#slide3" class="dot"></a>
+        <a href="#slide4" class="dot"></a>
+        <a href="#slide5" class="dot"></a>
+    </div>
+
+</body>
+</html>
